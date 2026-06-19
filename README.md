@@ -1,5 +1,33 @@
 # Kinesis Advantage 360 Pro ZMK Config
 
+## Keymap summary
+
+This fork adds homerow modifiers and a homerow layer-tap on the base layer. The other layers (Kp / Fn / Mod) are unchanged from the stock layout.
+
+### Homerow mods (hold to activate, tap for the letter)
+
+| Key | Hold | Key | Hold |
+| --- | --- | --- | --- |
+| `A` | Left Ctrl  | `;` | Right Ctrl |
+| `S` | Left Alt   | `L` | Right Alt  |
+| `D` | Left Cmd (GUI) | `K` | Right Cmd (GUI) |
+| `F` | Left Shift | `J` | Right Shift |
+
+### Homerow layer
+
+* **Hold `G`** → activates the **Kp (number/keypad) layer** while held.
+* **Tap `G`** → types `g` as normal.
+
+### Behavior tuning
+
+Both hold-taps use:
+
+* `tapping-term-ms = 200` — hold past this to fire the modifier/layer
+* `quick-tap-ms = 175` — repeat-tap window where a hold still types the letter (avoids accidental mods during fast typing)
+* `flavor = "tap-preferred"` — favors the tap action when timing is ambiguous
+
+Tune these in `config/adv360.keymap` (`hm` and `hl` behaviors) if the defaults feel off.
+
 ## Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)
