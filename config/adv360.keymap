@@ -39,6 +39,39 @@
             bindings = <&kp RG(TAB)>;
             key-positions = <20 21>;
         };
+
+        shift_paste {
+            bindings = <&kp LS(LC(V))>;
+            key-positions = <49 50>;
+        };
+
+        convert_to_table {
+            bindings = <&select_to_end_new_tab>;
+            key-positions = <31 32>;
+        };
+    };
+
+    macros {
+        select_to_end_new_tab: select_to_end_new_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(END)) &kp LC(T)>;
+            label = "SELECT_TO_END_NEW_TAB";
+        };
+
+        push_location: push_location {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(P) &kp U &kp S &kp H &kp MINUS &kp LS(L) &kp O &kp C &kp A &kp T &kp I &kp O &kp N &kp ENTER &tog 5>;
+            label = "PUSH_LOCATION";
+        };
+
+        pop_location: pop_location {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(P) &kp O &kp P &kp MINUS &kp LS(L) &kp O &kp C &kp A &kp T &kp I &kp O &kp N &kp ENTER &tog 0>;
+            label = "POP_LOCATION";
+        };
     };
 
     keymap {
@@ -47,11 +80,11 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp EQUAL         &kp N1       &kp N2       &kp N3       &kp N4        &kp N5   &tog 1                                                           &mo 3              &kp N6  &kp N7            &kp N8             &kp N9         &kp N0          &kp MINUS
-&kp TAB           &kp Q        &kp W        &hl 4 E      &kp R         &kp T    &kp RC(RG(LEFT))                                                 &kp LC(LG(RIGHT))  &kp Y   &kp U             &kp I              &kp O          &kp P           &kp BSLH
-&hm LS(HOME) ESC  &hm LCTRL A  &hm LALT S   &hm LGUI D   &hm RSHIFT F  &hl 1 G  &kp LC(RIGHT)     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none              &kp H   &hm RSHIFT J      &hm RGUI K         &hm RALT L     &hm RCTRL SEMI  &kp SQT
-&kp LSHFT         &hm RC(Z) Z  &hm RC(X) X  &hm LC(C) C  &hm LC(V) V   &kp B                                 &kp HOME      &kp PG_UP                                &kp N   &kp M             &kp COMMA          &kp DOT        &kp FSLH        &kp RSHFT
-&out OUT_TOG      &kp RET      &kp SPACE    &kp GRAVE    &kp EQUAL              &kp BSPC          &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp SPACE                  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSPACE  &kp DEL         &mo 2
+&kp EQUAL         &kp N1          &kp N2       &kp N3       &kp N4        &kp N5   &tog 1                                                           &mo 3              &kp N6  &kp N7            &kp N8             &kp N9         &kp N0          &kp MINUS
+&kp TAB           &kp Q           &kp W        &hl 4 E      &kp R         &kp T    &kp RC(RG(LEFT))                                                 &kp LC(LG(RIGHT))  &kp Y   &kp U             &kp I              &kp O          &kp P           &kp BSLH
+&hm LS(HOME) ESC  &hm LCTRL A     &hm LALT S   &hm LGUI D   &hm RSHIFT F  &hl 1 G  &kp LC(RIGHT)     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none              &kp H   &hm RSHIFT J      &hm RGUI K         &hm RALT L     &hm RCTRL SEMI  &kp SQT
+&kp LSHFT         &hm RC(Z) Z     &hm RC(X) X  &hm LC(C) C  &hm LC(V) V   &kp B                                 &kp HOME      &kp PG_UP                                &kp N   &kp M             &kp COMMA          &kp DOT        &kp FSLH        &kp RSHFT
+&out OUT_TOG      &push_location  &kp SPACE    &kp GRAVE    &kp EQUAL              &kp BSPC          &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp SPACE                  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSPACE  &kp DEL         &mo 2
             >;
         };
 
@@ -96,6 +129,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp K_MUTE       &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                           &trans    &kp PAGE_DOWN  &kp END       &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans                     &trans         &trans        &trans     &trans  &trans
+            >;
+        };
+
+        pop_layer {
+            bindings = <
+&trans  &trans         &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &pop_location  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
