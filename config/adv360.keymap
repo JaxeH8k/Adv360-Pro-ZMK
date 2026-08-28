@@ -83,18 +83,18 @@
             label = "POP_LOCATION";
         };
 
-        kitty_new_tab: kitty_new_window {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RC(SPACE) &kp T>;
-            label = "KITTY_NEW_WINDOW";
-        };
-
         kitty_new_window: kitty_new_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(ENTER))>;
             label = "KITTY_NEW_WINDOW";
+        };
+
+        kitty_new_tab: kitty_new_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp T>;
+            label = "KITTY_NEW_TAB";
         };
     };
 
