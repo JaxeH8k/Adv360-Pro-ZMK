@@ -59,6 +59,11 @@
             bindings = <&kitty_new_window>;
             key-positions = <41 42>;
         };
+
+        toggle_nav {
+            bindings = <&tog 4>;
+            key-positions = <41 42 43>;
+        };
     };
 
     macros {
@@ -106,7 +111,7 @@
             bindings = <
 &kp EQUAL         &kp N1       &kp N2       &kp N3       &kp N4        &kp N5   &tog 1                                                           &mo 3              &kp N6  &kp N7            &kp N8             &kp N9         &kp N0          &kp MINUS
 &kp TAB           &kp Q        &kp W        &hl 4 E      &kp R         &kp T    &kp RC(RG(LEFT))                                                 &kp LC(LG(RIGHT))  &kp Y   &kp U             &kp I              &kp O          &kp P           &kp BSLH
-&hm LS(HOME) ESC  &hm LCTRL A  &hm LALT S   &hm LGUI D   &hm RSHIFT F  &hl 1 G  &kp LC(RIGHT)     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none              &kp H   &hm RSHIFT J      &hm RGUI K         &hm RALT L     &hm RCTRL SEMI  &hl 4 SQT
+&hm LS(HOME) ESC  &hm LCTRL A  &hm LALT S   &hm LGUI D   &hm RSHIFT F  &hl 1 G  &kp LC(RIGHT)     &kp LCTRL  &kp LALT      &kp LGUI   &kp RCTRL  &none              &kp H   &hm RSHIFT J      &hm RGUI K         &hm RALT L     &hm RCTRL SEMI  &kp SQT
 &kp LSHFT         &hm RC(Z) Z  &hm RC(X) X  &hm LC(C) C  &hm LC(V) V   &kp B                                 &kp HOME      &kp PG_UP                                &kp N   &kp M             &kp COMMA          &kp DOT        &kp FSLH        &kp RSHFT
 &out OUT_TOG      &trans       &kp SPACE    &kp GRAVE    &kp EQUAL              &kp BSPC          &kp DEL    &kp END       &kp PG_DN  &kp ENTER  &kp SPACE                  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSPACE  &kp DEL         &mo 2
             >;
