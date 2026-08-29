@@ -47,7 +47,7 @@
 
         convert_to_table {
             bindings = <&select_to_end_new_tab>;
-            key-positions = <31 32>;
+            key-positions = <18 17>;
         };
 
         kitty_new_tab {
@@ -57,12 +57,12 @@
 
         kitty_new_window {
             bindings = <&kitty_new_window>;
-            key-positions = <41 42>;
+            key-positions = <55 56>;
         };
 
         toggle_nav {
             bindings = <&tog 4>;
-            key-positions = <41 42 43>;
+            key-positions = <23 24 25>;
         };
 
         toggle_nums {
