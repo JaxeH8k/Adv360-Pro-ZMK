@@ -64,6 +64,11 @@
             bindings = <&tog 4>;
             key-positions = <41 42 43>;
         };
+
+        toggle_nums {
+            bindings = <&tog 1>;
+            key-positions = <55 56 57>;
+        };
     };
 
     macros {
