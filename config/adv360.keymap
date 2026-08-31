@@ -40,26 +40,6 @@
             key-positions = <20 21>;
         };
 
-        shift_paste {
-            bindings = <&kp LS(LC(V))>;
-            key-positions = <49 50>;
-        };
-
-        convert_to_table {
-            bindings = <&select_to_end_new_tab>;
-            key-positions = <18 17>;
-        };
-
-        kitty_new_tab {
-            bindings = <&kitty_new_tab>;
-            key-positions = <23 24>;
-        };
-
-        kitty_new_window {
-            bindings = <&kitty_new_window>;
-            key-positions = <55 56>;
-        };
-
         toggle_nav {
             bindings = <&tog 4>;
             key-positions = <23 24 25>;
